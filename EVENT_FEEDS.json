@@ -1,11 +1,11 @@
 [
   {
-    "name": "OrderManagement",
+    "name": "CustomerMobileApp",
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "title": "DevRel & DevDocs @AsyncAPI",
-    "description": "All About Order Management",
-    "github": "OrderManagement",
-    "owner": "Solace",
+    "title": "Customer Facing Mobile Application",
+    "description": "acme-retail's innovative mobile application lets customers purchase any product available in our stores online, and have it either shipped, delivered via service like Shipt, or have it ready for pickup at any of our brick and mortar stores. Customers get real-time updates on their orders via the app as well.",
+    "github": "CustomerMobileApp",
+    "owner": "https://github.com/gvensan",
     "domain": "Retail",
     "tags": "retail, supplychain"
   }
