@@ -3,31 +3,51 @@
     "name": "CustomerMobileApp",
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
     "title": "Customer Facing Mobile Application",
-    "description": "acme-retail's innovative mobile application lets customers purchase any product available in our stores online, and have it either shipped, delivered via service like Shipt, or have it ready for pickup at any of our brick and mortar stores. Customers get real-time updates on their orders via the app as well.",
+    "description": "CustomerMobileApp is a user-friendly digital tool that enhances the shopping experience by offering features such as personalized promotions, easy access to product information, and a streamlined checkout process, all from the convenience of the customer's mobile device.",
     "github": "CustomerMobileApp",
     "owner": "gvensan",
     "domain": "Retail",
-    "tags": "retail, supplychain"
+    "tags": "retail, online"
   },
     {
-    "name": "CustomerMobileApp",
+    "name": "BusCommandAndControl",
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "title": "Customer Facing Mobile Application",
-    "description": "acme-retail's innovative mobile application lets customers purchase any product available in our stores online, and have it either shipped, delivered via service like Shipt, or have it ready for pickup at any of our brick and mortar stores. Customers get real-time updates on their orders via the app as well.",
-    "github": "CustomerMobileApp",
+    "title": "Bus Command & Control",
+    "description": "BusCommandAndControl is a comprehensive software system designed to optimize the management and operation of bus fleets, providing real-time tracking, route planning, and communication tools to ensure efficient and reliable public transportation services.",
+    "github": "BusCommandAndControl",
     "owner": "gvensan",
-    "domain": "Retail",
-    "tags": "retail, supplychain"
+    "domain": "Smart City",
+    "tags": "transportation, mqtt, tracking"
   },
-    {
-    "name": "CustomerMobileApp",
+  {
+    "name": "InStoreMobileApp",
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
-    "title": "Customer Facing Mobile Application",
-    "description": "acme-retail's innovative mobile application lets customers purchase any product available in our stores online, and have it either shipped, delivered via service like Shipt, or have it ready for pickup at any of our brick and mortar stores. Customers get real-time updates on their orders via the app as well.",
+    "title": "In Store Mobile Shop Application",
+    "description": "The In-Store Mobile Shop Application transforms your smartphone into a virtual shopping assistant, offering product details, in-store navigation, and instant checkout features to enhance your shopping experience. This app helps you save time and personalize your shopping journey right from the palm of your hand.",
     "github": "CustomerMobileApp",
     "owner": "gvensan",
     "domain": "Retail",
-    "tags": "retail, supplychain"
+    "tags": "retail, shopping"
+  },
+  {
+    "name": "NewAccount",
+    "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
+    "title": "New Account Management",
+    "description": "NewAccount application deals with the initial setup process where users create a fresh account to access services or applications, typically involving the provision of personal information and setting up login credentials to ensure secure and personalized access of a bank account.",
+    "github": "CustomerMobileApp",
+    "owner": "gvensan",
+    "domain": "Banking",
+    "tags": "banking, onboarding"
+  },
+  {
+    "name": "OrderManagement",
+    "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
+    "title": "Order Management",
+    "description": "OrderManagement is a system designed to handle all aspects of the ordering process, from placement and tracking to fulfillment and delivery, ensuring efficiency and accuracy in customer service operations.",
+    "github": "OrderManagement",
+    "owner": "gvensan",
+    "domain": "Banking",
+    "tags": "supplychain, o2c"
   }
 
 
