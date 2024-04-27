@@ -24,7 +24,7 @@
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
     "title": "In Store Mobile Shop Application",
     "description": "The In-Store Mobile Shop Application transforms your smartphone into a virtual shopping assistant, offering product details, in-store navigation, and instant checkout features to enhance your shopping experience. This app helps you save time and personalize your shopping journey right from the palm of your hand.",
-    "github": "CustomerMobileApp",
+    "github": "InStoreMobileApp",
     "owner": "gvensan",
     "domain": "Retail",
     "tags": "retail, shopping"
@@ -34,7 +34,7 @@
     "img": "https://avatars.githubusercontent.com/u/19964402?v=4",
     "title": "New Account Management",
     "description": "NewAccount application deals with the initial setup process where users create a fresh account to access services or applications, typically involving the provision of personal information and setting up login credentials to ensure secure and personalized access of a bank account.",
-    "github": "CustomerMobileApp",
+    "github": "NewAccount",
     "owner": "gvensan",
     "domain": "Banking",
     "tags": "banking, onboarding"
