@@ -1,7 +1,7 @@
 [
     {
-        "name": "Aviation - ACARSEngine",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdB0qq-iGC7RpPzwdvrlgEq8haqrY-_QQd-Wg61qrdA&s",
+        "name": "ACARSEngine",
+        "img": "https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-airplane-icon-png-image_1025191.jpg",
         "title": "ACARSEngine",
         "description": "ACARS-Aircraft Communications Addressing and Reporting System is a digital datalink system for transmission of short messages between aircraft and ground stations via airband radio or satellite. ",
         "github": "Aviation---ACARSEngine",
@@ -10,7 +10,7 @@
         "tags": "Landing Status, Aircraft Status"
     }, {
         "name": "AirOps-Engine",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdB0qq-iGC7RpPzwdvrlgEq8haqrY-_QQd-Wg61qrdA&s",
+        "img": "https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-airplane-icon-png-image_1025191.jpg",
         "title": "AirOps - Engine",
         "description": "AirOps systems is resposible for complex management of flight scheduling and trip oversight, crew compliance and communication, customer data, charter and maintenance .",
         "github": "AirOps-Engine",
@@ -19,7 +19,7 @@
         "tags": "Gate Change"
     }, {
         "name": "Reservation Engine",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdB0qq-iGC7RpPzwdvrlgEq8haqrY-_QQd-Wg61qrdA&s",
+        "img": "https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-airplane-icon-png-image_1025191.jpg",
         "title": "Reservation Engine",
         "description": "Airline reservation systems (ARS) are systems that allow an airline to sell their inventory (seats). It contains information on schedules and fares and contains a database of reservations (or passenger name records) and of tickets issued (if applicable).",
         "github": "Reservation-Engine",
@@ -28,7 +28,7 @@
         "tags": "Reservation, Booking, Cancellation"
     }, {
         "name": "ACME - Core Banking",
-        "img": "",
+        "img": "https://www.shutterstock.com/image-illustration/conceptual-business-illustration-words-core-260nw-1015011430.jpg",
         "title": "Core Banking",
         "description": "Application for supporting core banking activities. Added support for paying loans.",
         "github": "ACME---Core-Banking",
@@ -37,7 +37,7 @@
         "tags": "Core Banking, Account Management"
     }, {
         "name": "Mining - HR Service",
-        "img": "",
+        "img": "https://cdn-icons-png.flaticon.com/512/12255/12255907.png",
         "title": "HR Service",
         "description": "HR services in mining are crucial for managing the distinct challenges posed by the industry, which operates in often remote and hazardous environments. These services ensure the effective recruitment, retention, and development of a skilled workforce equipped to meet operational demands. Key functions include conducting robust safety and skills training, overseeing compliance with labor laws and safety regulations, and implementing programs that promote employee well-being and job satisfaction.",
         "github": "Mining---HR-Service",
@@ -46,7 +46,7 @@
         "tags": "HR Service, Shift Management, Break Management"
     }, {
         "name": "Retail - Order Fulfillment",
-        "img": "",
+        "img": "https://png.pngtree.com/png-clipart/20220603/original/pngtree-retail-word-concepts-banner-png-image_7904742.png",
         "title": "Order Fulfilment",
         "description": "This system involves processing and fulfilling customer orders, including order processing, pick and pack, and shipping.",
         "github": "Retail---Order-Fulfillment",
