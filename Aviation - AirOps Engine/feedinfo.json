@@ -1,0 +1,10 @@
+{
+  "name": "AirOps-Engine",
+  "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdB0qq-iGC7RpPzwdvrlgEq8haqrY-_QQd-Wg61qrdA&s",
+  "title": "AirOps - Engine",
+  "description": "AirOps systems is resposible for complex management of flight scheduling and trip oversight, crew compliance and communication, customer data, charter and maintenance .",
+  "github": "AirOps-Engine",
+  "contributor": "SolaceLabs",
+  "domain": "Aviation",
+  "tags": "Gate Change"
+}

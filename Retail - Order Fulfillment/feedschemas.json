@@ -1,0 +1,155 @@
+[
+  {
+    "topic": "acmeRetail/sc/order/confirmed/v1/{customerID}/{orderID}",
+    "eventName": "Order Confirmed",
+    "eventVersion": "0.1.0",
+    "messageName": "Order_Confirmed",
+    "topicParameters": {
+      "orderID": {
+        "schema": {
+          "type": "string"
+        }
+      },
+      "customerID": {
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "payload": {
+      "total_amount": {
+        "type": "number"
+      },
+      "payment_status": {
+        "type": "string"
+      },
+      "customer_id": {
+        "type": "string"
+      },
+      "order_id": {
+        "type": "string"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "number"
+            },
+            "price": {
+              "type": "number"
+            },
+            "product_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "timestamp": {
+        "format": "date-time",
+        "type": "string"
+      }
+    },
+    "consumers": [
+      {
+        "name": "orderFulfilment.order.confirmed",
+        "topicSubscriptions": [
+          "acmeRetail/sc/order/confirmed/v1/*/*"
+        ]
+      }
+    ]
+  },
+  {
+    "topic": "acmeRetail/sc/payments/refund/issued/v1/{customerID}/{refundID}/{totalAmount}",
+    "eventName": "Refund Issued",
+    "eventVersion": "0.1.0",
+    "messageName": "Refund_Issued",
+    "topicParameters": {
+      "totalAmount": {
+        "schema": {
+          "type": "string"
+        }
+      },
+      "customerID": {
+        "schema": {
+          "type": "string"
+        }
+      },
+      "refundID": {
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "payload": {
+      "amount": {
+        "type": "number"
+      },
+      "orderId": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "refundId": {
+        "type": "string"
+      }
+    },
+    "consumers": [
+      {
+        "name": "orderFulfilment.refund.issued",
+        "topicSubscriptions": [
+          "acmeRetail/sc/payments/refund/issued/v1/*/*/*"
+        ]
+      }
+    ]
+  },
+  {
+    "topic": "acmeRetail/sc/order/cancelled/v1/{customerID}/{orderID}",
+    "eventName": "Order Cancelled",
+    "eventVersion": "0.1.0",
+    "messageName": "Order_Cancelled",
+    "topicParameters": {
+      "orderID": {
+        "schema": {
+          "type": "string"
+        }
+      },
+      "customerID": {
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "payload": {
+      "reason": {
+        "type": "string"
+      },
+      "orderId": {
+        "type": "string"
+      },
+      "eventTime": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "customerId": {
+        "type": "string"
+      },
+      "eventType": {
+        "type": "string",
+        "enum": [
+          "Order Cancelled"
+        ]
+      }
+    },
+    "consumers": [
+      {
+        "name": "orderFulfilment.order.cancelled",
+        "topicSubscriptions": [
+          "acmeRetail/sc/order/cancelled/v1/*/*"
+        ]
+      }
+    ]
+  }
+]

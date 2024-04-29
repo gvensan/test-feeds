@@ -1,0 +1,377 @@
+[
+  {
+    "topic": "myair/reservation/bookingCancelled/v1/{PNR}",
+    "eventName": "cancelledBooking",
+    "eventVersion": "0.1.0",
+    "messageName": "cancelledBooking",
+    "topicParameters": {
+      "PNR": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "PNR",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "date": {
+        "type": "number",
+        "rule": {
+          "name": "date",
+          "type": "number",
+          "group": "DateRules",
+          "rule": "past",
+          "years": 1
+        }
+      },
+      "flightNo": {
+        "type": "string",
+        "rule": {
+          "name": "flightNo",
+          "type": "string",
+          "group": "AirlineRules",
+          "rule": "flightNumber",
+          "minimum": 1,
+          "maximum": 3,
+          "leadingZeros": true
+        }
+      },
+      "PNR": {
+        "type": "string",
+        "rule": {
+          "name": "PNR",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "minLength": 6,
+          "maxLength": 6,
+          "casing": "upper"
+        }
+      },
+      "arrival": {
+        "type": "string",
+        "rule": {
+          "name": "arrival",
+          "type": "string",
+          "group": "DateRules",
+          "rule": "future",
+          "years": 1
+        }
+      },
+      "class": {
+        "type": "number",
+        "rule": {
+          "name": "class",
+          "type": "number",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "ECONOMY",
+            "PREMIUM ECONOMY",
+            "BUSINESS",
+            "FIRST"
+          ]
+        }
+      },
+      "dep": {
+        "type": "string",
+        "rule": {
+          "name": "dep",
+          "type": "string",
+          "group": "DateRules",
+          "rule": "future",
+          "years": 1
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": 1,
+      "delay": 0
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "PNR",
+          "fieldName": "PNR",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "PNR",
+          "fieldName": "PNR",
+          "fieldType": "string"
+        }
+      }
+    ]
+  },
+  {
+    "topic": "myair/reservation/bookingCreated/v1/{PNR}/{flightNo}/{dep}/{arrival}/{date}/{class}",
+    "eventName": "bookingDetails",
+    "eventVersion": "0.1.0",
+    "messageName": "bookingDetails",
+    "topicParameters": {
+      "date": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "date",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "flightNo": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "flightNo",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "PNR": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "PNR",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "arrival": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "arrival",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "class": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "class",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "dep": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "dep",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "date": {
+        "type": "number",
+        "rule": {
+          "name": "date",
+          "type": "number",
+          "group": "DateRules",
+          "rule": "future",
+          "years": 1
+        }
+      },
+      "flightNo": {
+        "type": "string",
+        "rule": {
+          "name": "flightNo",
+          "type": "string",
+          "group": "AirlineRules",
+          "rule": "flightNumber",
+          "minimum": 1,
+          "maximum": 3,
+          "leadingZeros": true
+        }
+      },
+      "PNR": {
+        "type": "string",
+        "rule": {
+          "name": "PNR",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "minLength": 6,
+          "maxLength": 6,
+          "casing": "upper"
+        }
+      },
+      "arrival": {
+        "type": "string",
+        "rule": {
+          "name": "arrival",
+          "type": "string",
+          "group": "DateRules",
+          "rule": "future",
+          "years": 1
+        }
+      },
+      "class": {
+        "type": "number",
+        "rule": {
+          "name": "class",
+          "type": "number",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "ECONOMY",
+            "PREMIUM ECONOMY",
+            "BUSINESS",
+            "FIRST"
+          ]
+        }
+      },
+      "dep": {
+        "type": "string",
+        "rule": {
+          "name": "dep",
+          "type": "string",
+          "group": "DateRules",
+          "rule": "future",
+          "years": 1
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": 1,
+      "delay": 0
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "date",
+          "fieldName": "date",
+          "fieldType": "number"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "date",
+          "fieldName": "date",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "flightNo",
+          "fieldName": "flightNo",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "flightNo",
+          "fieldName": "flightNo",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "PNR",
+          "fieldName": "PNR",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "PNR",
+          "fieldName": "PNR",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "arrival",
+          "fieldName": "arrival",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "arrival",
+          "fieldName": "arrival",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "class",
+          "fieldName": "class",
+          "fieldType": "number"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "class",
+          "fieldName": "class",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "dep",
+          "fieldName": "dep",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "dep",
+          "fieldName": "dep",
+          "fieldType": "string"
+        }
+      }
+    ]
+  }
+]

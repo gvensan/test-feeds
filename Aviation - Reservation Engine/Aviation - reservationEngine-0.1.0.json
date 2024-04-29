@@ -1,0 +1,153 @@
+{
+    "components": {
+        "schemas": {
+            "bookingInfo": {
+                "x-ep-schema-version": "0.1.0",
+                "x-ep-schema-version-id": "na4nueiglme",
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "x-ep-schema-state-name": "RELEASED",
+                "x-ep-schema-name": "bookingInfo",
+                "title": "Generated schema for Root",
+                "type": "object",
+                "x-ep-application-domain-id": "qa1fm649evb",
+                "x-ep-schema-version-displayname": "",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Aviation: checkIn",
+                "x-ep-schema-state-id": "2",
+                "x-ep-schema-id": "3ekjo6k9d3e",
+                "properties": {
+                    "date": {
+                        "type": "number"
+                    },
+                    "flightNo": {
+                        "type": "string"
+                    },
+                    "PNR": {
+                        "type": "string"
+                    },
+                    "arrival": {
+                        "type": "string"
+                    },
+                    "class": {
+                        "type": "number"
+                    },
+                    "dep": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "messages": {
+            "cancelledBooking": {
+                "x-ep-event-id": "gxnv0p9iljz",
+                "x-ep-event-version-displayname": "",
+                "description": "",
+                "x-ep-application-domain-id": "qa1fm649evb",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "RELEASED",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Aviation: checkIn",
+                "x-ep-event-version-id": "fg5wje1e78l",
+                "payload": {
+                    "$ref": "#/components/schemas/bookingInfo"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "cancelledBooking",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "2"
+            },
+            "bookingDetails": {
+                "x-ep-event-id": "rz64suxh9kp",
+                "x-ep-event-version-displayname": "",
+                "description": "",
+                "x-ep-application-domain-id": "qa1fm649evb",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "RELEASED",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Aviation: checkIn",
+                "x-ep-event-version-id": "ahjypm88qa5",
+                "payload": {
+                    "$ref": "#/components/schemas/bookingInfo"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "bookingDetails",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "2"
+            }
+        }
+    },
+    "channels": {
+        "myair/reservation/bookingCancelled/v1/{PNR}": {
+            "subscribe": {
+                "message": {
+                    "$ref": "#/components/messages/cancelledBooking"
+                }
+            },
+            "parameters": {
+                "PNR": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "PNR"
+                }
+            }
+        },
+        "myair/reservation/bookingCreated/v1/{PNR}/{flightNo}/{dep}/{arrival}/{date}/{class}": {
+            "subscribe": {
+                "message": {
+                    "$ref": "#/components/messages/bookingDetails"
+                }
+            },
+            "parameters": {
+                "date": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "date"
+                },
+                "flightNo": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "flightNo"
+                },
+                "PNR": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "PNR"
+                },
+                "arrival": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "arrival"
+                },
+                "class": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "class"
+                },
+                "dep": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "dep"
+                }
+            }
+        }
+    },
+    "asyncapi": "2.5.0",
+    "info": {
+        "x-ep-application-version": "0.1.0",
+        "x-ep-application-version-id": "6grdenw6hfo",
+        "x-ep-application-id": "lkmklcm4ple",
+        "x-ep-state-name": "RELEASED",
+        "title": "reservationEngine",
+        "x-ep-application-domain-id": "qa1fm649evb",
+        "version": "0.1.0",
+        "x-ep-state-id": "2",
+        "x-ep-application-domain-name": "Aviation: checkIn"
+    }
+}

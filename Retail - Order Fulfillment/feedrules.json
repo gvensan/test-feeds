@@ -1,0 +1,491 @@
+[
+  {
+    "topic": "acmeRetail/sc/order/delivered/v1/{customerID}/{orderID}/{startLat}/{startLon}/{endLat}/{endLon}",
+    "eventName": "Order Delivered",
+    "eventVersion": "0.1.0",
+    "messageName": "Order_Delivered",
+    "topicParameters": {
+      "startLat": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "startLat",
+          "type": "string",
+          "group": "LocationRules",
+          "rule": "latitude",
+          "minimum": -90,
+          "maximum": 90,
+          "precision": 2
+        }
+      },
+      "endLat": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "endLat",
+          "type": "string",
+          "group": "LocationRules",
+          "rule": "latitude",
+          "minimum": -90,
+          "maximum": 90,
+          "precision": 2
+        }
+      },
+      "orderID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "orderID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "startLon": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "startLon",
+          "type": "string",
+          "group": "LocationRules",
+          "rule": "longitude",
+          "minimum": -90,
+          "maximum": 90,
+          "precision": 2
+        }
+      },
+      "endLon": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "endLon",
+          "type": "string",
+          "group": "LocationRules",
+          "rule": "longitude",
+          "minimum": -90,
+          "maximum": 90,
+          "precision": 2
+        }
+      },
+      "customerID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "customerID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 5,
+          "maxLength": 5,
+          "leadingZeros": false
+        }
+      }
+    },
+    "payload": {
+      "orderId": {
+        "type": "string",
+        "rule": {
+          "name": "orderId",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 5,
+          "maxLength": 5,
+          "leadingZeros": false
+        }
+      },
+      "deliveryAddress": {
+        "type": "object",
+        "properties": {
+          "zipCode": {
+            "type": "string",
+            "rule": {
+              "name": "zipCode",
+              "type": "string",
+              "group": "LocationRules",
+              "rule": "zipCode"
+            }
+          },
+          "country": {
+            "type": "string",
+            "rule": {
+              "name": "country",
+              "type": "string",
+              "group": "StringRules",
+              "rule": "enum",
+              "enum": [
+                "US"
+              ]
+            }
+          },
+          "city": {
+            "type": "string",
+            "rule": {
+              "name": "city",
+              "type": "string",
+              "group": "StringRules",
+              "rule": "enum",
+              "enum": [
+                "New York",
+                "Los Angeles",
+                "Chicago",
+                "Miami",
+                "Houston",
+                "Dallas",
+                "Philadelphia",
+                "Atlanta",
+                "Washington",
+                "Boston",
+                "Phoenix",
+                "Detroit",
+                "Seattle",
+                "San Francisco",
+                "San Diego",
+                "Minneapolis",
+                "Tampa",
+                "Brooklyn",
+                "Denver",
+                "Queens",
+                "Riverside",
+                "Las Vegas",
+                "Baltimore",
+                "St. Louis",
+                "Portland",
+                "San Antonio",
+                "Sacramento",
+                "Austin",
+                "Orlando",
+                "San Juan",
+                "San Jose",
+                "Pittsburgh",
+                "Indianapolis",
+                "Manhattan",
+                "Cincinnati",
+                "Kansas City",
+                "Cleveland",
+                "Columbus",
+                "Bronx",
+                "Virginia Beach",
+                "Charlotte",
+                "Milwaukee",
+                "Providence",
+                "Jacksonville",
+                "Nashville",
+                "Salt Lake City",
+                "Raleigh",
+                "Richmond",
+                "Memphis",
+                "Oklahoma City",
+                "Hartford",
+                "Louisville",
+                "Buffalo",
+                "New Orleans",
+                "Fort Worth",
+                "Bridgeport",
+                "Tucson",
+                "El Paso",
+                "Omaha"
+              ]
+            }
+          },
+          "street": {
+            "type": "string",
+            "rule": {
+              "name": "street",
+              "type": "string",
+              "group": "LocationRules",
+              "rule": "streetAddress"
+            }
+          },
+          "state": {
+            "type": "string",
+            "rule": {
+              "name": "state",
+              "type": "string",
+              "group": "StringRules",
+              "rule": "enum",
+              "enum": [
+                "NY",
+                "CA",
+                "IL",
+                "FL",
+                "TX",
+                "TX",
+                "PA",
+                "GA",
+                "DC",
+                "MA",
+                "AZ",
+                "MI",
+                "WA",
+                "CA",
+                "CA",
+                "MN",
+                "FL",
+                "NY",
+                "CO",
+                "NY",
+                "CA",
+                "NV",
+                "MD",
+                "MO",
+                "OR",
+                "TX",
+                "CA",
+                "TX",
+                "FL",
+                "PR",
+                "CA",
+                "PA",
+                "IN",
+                "NY",
+                "OH",
+                "MO",
+                "OH",
+                "OH",
+                "NY",
+                "VA",
+                "NC",
+                "WI",
+                "RI",
+                "FL",
+                "TN",
+                "UT",
+                "NC",
+                "VA",
+                "TN",
+                "OK",
+                "CT",
+                "KY",
+                "NY",
+                "LA",
+                "TX",
+                "CT",
+                "AZ",
+                "TX",
+                "NE"
+              ]
+            }
+          }
+        },
+        "rule": {
+          "name": "deliveryAddress",
+          "type": "object"
+        }
+      },
+      "deliveryDate": {
+        "format": "date-time",
+        "type": "string",
+        "rule": {
+          "name": "deliveryDate",
+          "type": "string",
+          "group": "DateRules",
+          "rule": "soon",
+          "days": 10
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": 1,
+      "delay": 0
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "orderId",
+          "fieldName": "orderId",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "orderID",
+          "fieldName": "orderID",
+          "fieldType": "string"
+        }
+      }
+    ]
+  },
+  {
+    "topic": "acmeRetail/sc/order/shipped/v1/{customerID}/{orderID}/{startLat}/{startLon}/{endLat}/{endLon}",
+    "eventName": "Order Shipped",
+    "eventVersion": "0.1.0",
+    "messageName": "Order_Shipped",
+    "topicParameters": {
+      "startLat": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "startLat",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "endLat": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "endLat",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "orderID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "orderID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "startLon": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "startLon",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "endLon": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "endLon",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "customerID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "customerID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "orderId": {
+        "description": "The unique identifier for the order that was shipped.",
+        "type": "string",
+        "rule": {
+          "description": "The unique identifier for the order that was shipped.",
+          "type": "string",
+          "name": "orderId",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "shipmentId": {
+        "description": "The unique identifier for the shipment that was created.",
+        "type": "string",
+        "rule": {
+          "description": "The unique identifier for the shipment that was created.",
+          "type": "string",
+          "name": "shipmentId",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "shippingCarrier": {
+        "description": "The name of the shipping carrier used to deliver the shipment.",
+        "type": "string",
+        "rule": {
+          "description": "The name of the shipping carrier used to deliver the shipment.",
+          "type": "string",
+          "name": "shippingCarrier",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "shipmentDate": {
+        "format": "date-time",
+        "description": "The date and time that the shipment was created.",
+        "type": "string",
+        "rule": {
+          "format": "date-time",
+          "description": "The date and time that the shipment was created.",
+          "type": "string",
+          "name": "shipmentDate",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "trackingNumber": {
+        "description": "The tracking number assigned by the shipping carrier to the shipment.",
+        "type": "string",
+        "rule": {
+          "description": "The tracking number assigned by the shipping carrier to the shipment.",
+          "type": "string",
+          "name": "trackingNumber",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": 1,
+      "delay": 0
+    }
+  }
+]

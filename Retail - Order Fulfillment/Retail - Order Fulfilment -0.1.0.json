@@ -1,0 +1,503 @@
+{
+    "components": {
+        "schemas": {
+            "Order_Cancelled": {
+                "x-ep-schema-version": "0.1.0",
+                "x-ep-schema-version-id": "gvebsoiu3kt",
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "x-ep-schema-state-name": "RELEASED",
+                "x-ep-schema-name": "Order Cancelled",
+                "type": "object",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "x-ep-schema-version-displayname": "0.1.0",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-schema-state-id": "2",
+                "x-ep-schema-id": "6g5n76icyet",
+                "properties": {
+                    "reason": {
+                        "type": "string"
+                    },
+                    "orderId": {
+                        "type": "string"
+                    },
+                    "eventTime": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "customerId": {
+                        "type": "string"
+                    },
+                    "eventType": {
+                        "type": "string",
+                        "enum": ["Order Cancelled"]
+                    }
+                }
+            },
+            "Order_Delivered": {
+                "x-ep-schema-version": "0.1.0",
+                "x-ep-schema-version-id": "bh2hy2f9fhd",
+                "x-ep-schema-state-name": "DRAFT",
+                "x-ep-schema-name": "Order Delivered",
+                "type": "object",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "x-ep-schema-version-displayname": "0.1.0",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-schema-state-id": "1",
+                "x-ep-schema-id": "rzb1450pbc4",
+                "properties": {
+                    "orderId": {
+                        "type": "string"
+                    },
+                    "deliveryAddress": {
+                        "type": "object",
+                        "properties": {
+                            "zipCode": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "street": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "deliveryDate": {
+                        "format": "date-time",
+                        "type": "string"
+                    }
+                }
+            },
+            "Order_Confirmed": {
+                "x-ep-schema-version": "0.1.0",
+                "x-ep-schema-version-id": "fhi0p5qyp2u",
+                "x-ep-schema-state-name": "DRAFT",
+                "x-ep-schema-name": "Order Confirmed",
+                "type": "object",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "x-ep-schema-version-displayname": "0.1.0",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-schema-state-id": "1",
+                "x-ep-schema-id": "nthdjsubb4d",
+                "properties": {
+                    "total_amount": {
+                        "type": "number"
+                    },
+                    "payment_status": {
+                        "type": "string"
+                    },
+                    "customer_id": {
+                        "type": "string"
+                    },
+                    "order_id": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "quantity": {
+                                    "type": "number"
+                                },
+                                "price": {
+                                    "type": "number"
+                                },
+                                "product_id": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "timestamp": {
+                        "format": "date-time",
+                        "type": "string"
+                    }
+                }
+            },
+            "Refund_Issued": {
+                "x-ep-schema-version": "0.1.0",
+                "x-ep-schema-version-id": "wxgycjopo4p",
+                "x-ep-schema-state-name": "DRAFT",
+                "x-ep-schema-name": "Refund Issued",
+                "type": "object",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "x-ep-schema-version-displayname": "0.1.0",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-schema-state-id": "1",
+                "x-ep-schema-id": "u30o24x6dci",
+                "properties": {
+                    "amount": {
+                        "type": "number"
+                    },
+                    "orderId": {
+                        "type": "string"
+                    },
+                    "currency": {
+                        "type": "string"
+                    },
+                    "refundId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Order_Shipped": {
+                "x-ep-schema-version": "0.1.0",
+                "x-ep-schema-version-id": "b38f13eowni",
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "x-ep-schema-state-name": "DRAFT",
+                "x-ep-schema-name": "Order Shipped",
+                "title": "Order Shipped Event",
+                "type": "object",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "x-ep-schema-version-displayname": "0.1.0",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-schema-state-id": "1",
+                "x-ep-schema-id": "ch838128ydr",
+                "properties": {
+                    "orderId": {
+                        "description": "The unique identifier for the order that was shipped.",
+                        "type": "string"
+                    },
+                    "shipmentId": {
+                        "description": "The unique identifier for the shipment that was created.",
+                        "type": "string"
+                    },
+                    "shippingCarrier": {
+                        "description": "The name of the shipping carrier used to deliver the shipment.",
+                        "type": "string"
+                    },
+                    "shipmentDate": {
+                        "format": "date-time",
+                        "description": "The date and time that the shipment was created.",
+                        "type": "string"
+                    },
+                    "trackingNumber": {
+                        "description": "The tracking number assigned by the shipping carrier to the shipment.",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "messages": {
+            "Order_Cancelled": {
+                "x-ep-event-id": "kyn0rz8iqjh",
+                "x-ep-event-version-displayname": "0.1.0",
+                "description": "This event is triggered when a customer cancels an order.",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "RELEASED",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-event-version-id": "lty1okz2c9f",
+                "payload": {
+                    "$ref": "#/components/schemas/Order_Cancelled"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "Order Cancelled",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "2"
+            },
+            "Order_Delivered": {
+                "x-ep-event-id": "9yxdvd90geu",
+                "x-ep-event-version-displayname": "0.1.0",
+                "description": "Event triggered when an order has finished its journey and has been delivered.",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "DRAFT",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-event-version-id": "kb96y5gexiw",
+                "payload": {
+                    "$ref": "#/components/schemas/Order_Delivered"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "Order Delivered",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "1"
+            },
+            "Order_Confirmed": {
+                "x-ep-event-id": "fs4dx88637s",
+                "x-ep-event-version-displayname": "0.1.0",
+                "description": "Published by the e-commerce system, this event is triggered when an order is confirmed.",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "DRAFT",
+                "x-ep-shared": "false",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-event-version-id": "4efhe85g1ff",
+                "payload": {
+                    "$ref": "#/components/schemas/Order_Confirmed"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "Order Confirmed",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "1"
+            },
+            "Refund_Issued": {
+                "x-ep-event-id": "kyywe9iorso",
+                "x-ep-event-version-displayname": "0.1.0",
+                "description": "To notify other systems that a refund has been issued and update the order and payment status.",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "DRAFT",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-event-version-id": "xwe6yuzbqgh",
+                "payload": {
+                    "$ref": "#/components/schemas/Refund_Issued"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "Refund Issued",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "1"
+            },
+            "Order_Shipped": {
+                "x-ep-event-id": "exm3igt8hw7",
+                "x-ep-event-version-displayname": "0.1.0",
+                "description": "Event triggered when an order is shipped.",
+                "x-ep-application-domain-id": "sz4zqc3hezi",
+                "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+                "x-ep-event-state-name": "DRAFT",
+                "x-ep-shared": "true",
+                "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization",
+                "x-ep-event-version-id": "g4agvh6igeh",
+                "payload": {
+                    "$ref": "#/components/schemas/Order_Shipped"
+                },
+                "x-ep-event-version": "0.1.0",
+                "x-ep-event-name": "Order Shipped",
+                "contentType": "application/json",
+                "x-ep-event-state-id": "1"
+            }
+        }
+    },
+    "channels": {
+        "acmeRetail/sc/order/confirmed/v1/{customerID}/{orderID}": {
+            "publish": {
+                "bindings": {
+                    "solace": {
+                        "destinations": [
+                            {
+                                "destinationType": "queue",
+                                "queue": {
+                                    "name": "orderFulfilment.order.confirmed",
+                                    "topicSubscriptions": ["acmeRetail/sc/order/confirmed/v1/*/*"]
+                                }
+                            }
+                        ],
+                        "bindingVersion": "0.3.0"
+                    }
+                },
+                "message": {
+                    "$ref": "#/components/messages/Order_Confirmed"
+                }
+            },
+            "parameters": {
+                "orderID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "orderID"
+                },
+                "customerID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "customerID"
+                }
+            }
+        },
+        "acmeRetail/sc/payments/refund/issued/v1/{customerID}/{refundID}/{totalAmount}": {
+            "publish": {
+                "bindings": {
+                    "solace": {
+                        "destinations": [
+                            {
+                                "destinationType": "queue",
+                                "queue": {
+                                    "name": "orderFulfilment.refund.issued",
+                                    "topicSubscriptions": ["acmeRetail/sc/payments/refund/issued/v1/*/*/*"]
+                                }
+                            }
+                        ],
+                        "bindingVersion": "0.3.0"
+                    }
+                },
+                "message": {
+                    "$ref": "#/components/messages/Refund_Issued"
+                }
+            },
+            "parameters": {
+                "totalAmount": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "totalAmount"
+                },
+                "customerID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "customerID"
+                },
+                "refundID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "refundID"
+                }
+            }
+        },
+        "acmeRetail/sc/order/delivered/v1/{customerID}/{orderID}/{startLat}/{startLon}/{endLat}/{endLon}": {
+            "subscribe": {
+                "message": {
+                    "$ref": "#/components/messages/Order_Delivered"
+                }
+            },
+            "parameters": {
+                "startLat": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "startLat"
+                },
+                "endLat": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "endLat"
+                },
+                "orderID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "orderID"
+                },
+                "startLon": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "startLon"
+                },
+                "endLon": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "endLon"
+                },
+                "customerID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "customerID"
+                }
+            }
+        },
+        "acmeRetail/sc/order/cancelled/v1/{customerID}/{orderID}": {
+            "publish": {
+                "bindings": {
+                    "solace": {
+                        "destinations": [
+                            {
+                                "destinationType": "queue",
+                                "queue": {
+                                    "name": "orderFulfilment.order.cancelled",
+                                    "topicSubscriptions": ["acmeRetail/sc/order/cancelled/v1/*/*"]
+                                }
+                            }
+                        ],
+                        "bindingVersion": "0.3.0"
+                    }
+                },
+                "message": {
+                    "$ref": "#/components/messages/Order_Cancelled"
+                }
+            },
+            "parameters": {
+                "orderID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "orderID"
+                },
+                "customerID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "customerID"
+                }
+            }
+        },
+        "acmeRetail/sc/order/shipped/v1/{customerID}/{orderID}/{startLat}/{startLon}/{endLat}/{endLon}": {
+            "subscribe": {
+                "message": {
+                    "$ref": "#/components/messages/Order_Shipped"
+                }
+            },
+            "parameters": {
+                "startLat": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "startLat"
+                },
+                "endLat": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "endLat"
+                },
+                "orderID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "orderID"
+                },
+                "startLon": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "startLon"
+                },
+                "endLon": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "endLon"
+                },
+                "customerID": {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "x-ep-parameter-name": "customerID"
+                }
+            }
+        }
+    },
+    "asyncapi": "2.5.0",
+    "info": {
+        "x-ep-application-version": "0.1.0",
+        "x-ep-application-version-id": "upwopwymiw2",
+        "x-ep-application-id": "gc0qc42zrj5",
+        "description": "This system involves processing and fulfilling customer orders, including order processing, pick and pack, and shipping.",
+        "x-ep-displayname": "0.1.0",
+        "x-ep-state-name": "DRAFT",
+        "title": "Order Fulfilment ",
+        "x-ep-application-domain-id": "sz4zqc3hezi",
+        "version": "0.1.0",
+        "x-ep-state-id": "1",
+        "x-ep-application-domain-name": "Supply Chain: Acme Retail - Supply Chain Optimization"
+    }
+}

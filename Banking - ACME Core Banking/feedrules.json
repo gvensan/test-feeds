@@ -1,0 +1,848 @@
+[
+  {
+    "topic": "acmebank/solace/core/deposit/v1/{currency}/{amount}/{transactionID}",
+    "eventName": "Deposit",
+    "eventVersion": "0.1.2",
+    "messageName": "Deposit",
+    "topicParameters": {
+      "amount": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "amount",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "currency": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "transactionID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "transactionID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "transactionType": {
+        "description": "The transaction type.",
+        "type": "string",
+        "rule": {
+          "name": "transactionType",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "CREDIT"
+          ]
+        }
+      },
+      "amount": {
+        "description": "The transaction amount.",
+        "type": "number",
+        "rule": {
+          "name": "amount",
+          "type": "number",
+          "group": "NumberRules",
+          "rule": "float",
+          "minimum": 0,
+          "maximum": 1000,
+          "fractionDigits": 2
+        }
+      },
+      "transactionNum": {
+        "description": "The unique identifier of the transaction.",
+        "type": "integer",
+        "rule": {
+          "name": "transactionNum",
+          "type": "integer",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 6,
+          "maxLength": 6,
+          "leadingZeros": true
+        }
+      },
+      "accountNum": {
+        "description": "The unique identifer of an account.",
+        "type": "integer",
+        "rule": {
+          "name": "accountNum",
+          "type": "integer",
+          "group": "FinanceRules",
+          "rule": "accountNumber"
+        }
+      },
+      "currency": {
+        "description": "The currency of the transaction.",
+        "type": "string",
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "USD",
+            "CAD",
+            "INR"
+          ]
+        }
+      },
+      "timestamp": {
+        "description": "The time stamp of the event.",
+        "type": "string",
+        "rule": {
+          "name": "timestamp",
+          "type": "string",
+          "group": "NumberRules",
+          "rule": "int",
+          "minimum": 1714375160,
+          "maximum": 1716375160
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": "3",
+      "delay": 0
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "number"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "transactionNum",
+          "fieldName": "transactionNum",
+          "fieldType": "integer"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "transactionID",
+          "fieldName": "transactionID",
+          "fieldType": "string"
+        }
+      }
+    ]
+  },
+  {
+    "topic": "acmebank/solace/core/payment/creditCard/paid/v1/{currency}/{amount}/{transactionID}",
+    "eventName": "Credit Card Paid",
+    "eventVersion": "0.1.1",
+    "messageName": "Credit_Card_Paid",
+    "topicParameters": {
+      "amount": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "amount",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "currency": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "transactionID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "transactionID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "transactionType": {
+        "description": "The transaction type.",
+        "type": "string",
+        "rule": {
+          "name": "transactionType",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "PAYMENT"
+          ]
+        }
+      },
+      "amount": {
+        "description": "The transaction amount.",
+        "type": "number",
+        "rule": {
+          "name": "amount",
+          "type": "number",
+          "group": "NumberRules",
+          "rule": "float",
+          "minimum": 0,
+          "maximum": 1000,
+          "fractionDigits": 2
+        }
+      },
+      "transactionNum": {
+        "description": "The unique identifier of the transaction.",
+        "type": "integer",
+        "rule": {
+          "name": "transactionNum",
+          "type": "integer",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 6,
+          "maxLength": 6,
+          "leadingZeros": true
+        }
+      },
+      "accountNum": {
+        "description": "The unique identifer of an account.",
+        "type": "integer",
+        "rule": {
+          "name": "accountNum",
+          "type": "integer",
+          "group": "FinanceRules",
+          "rule": "accountNumber"
+        }
+      },
+      "currency": {
+        "description": "The currency of the transaction.",
+        "type": "string",
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "USD"
+          ]
+        }
+      },
+      "timestamp": {
+        "description": "The time stamp of the event.",
+        "type": "string",
+        "rule": {
+          "name": "timestamp",
+          "type": "string",
+          "group": "NumberRules",
+          "rule": "int",
+          "minimum": 1714375160,
+          "maximum": 1715375160
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": 1,
+      "delay": 0
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "number"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "transactionNum",
+          "fieldName": "transactionNum",
+          "fieldType": "integer"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "transactionID",
+          "fieldName": "transactionID",
+          "fieldType": "string"
+        }
+      }
+    ]
+  },
+  {
+    "topic": "acmebank/solace/core/withdrawal/v1/{currency}/{amount}/{transactionID}",
+    "eventName": "Withdrawal",
+    "eventVersion": "0.1.1",
+    "messageName": "Withdrawal",
+    "topicParameters": {
+      "amount": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "amount",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "currency": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "transactionID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "transactionID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "transactionType": {
+        "description": "The transaction type.",
+        "type": "string",
+        "rule": {
+          "name": "transactionType",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "DEBIT"
+          ]
+        }
+      },
+      "amount": {
+        "description": "The transaction amount.",
+        "type": "number",
+        "rule": {
+          "name": "amount",
+          "type": "number",
+          "group": "NumberRules",
+          "rule": "float",
+          "minimum": 0,
+          "maximum": 1000,
+          "fractionDigits": 2
+        }
+      },
+      "transactionNum": {
+        "description": "The unique identifier of the transaction.",
+        "type": "integer",
+        "rule": {
+          "name": "transactionNum",
+          "type": "integer",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 6,
+          "maxLength": 6,
+          "leadingZeros": true
+        }
+      },
+      "accountNum": {
+        "description": "The unique identifer of an account.",
+        "type": "integer",
+        "rule": {
+          "name": "accountNum",
+          "type": "integer",
+          "group": "FinanceRules",
+          "rule": "accountNumber"
+        }
+      },
+      "currency": {
+        "description": "The currency of the transaction.",
+        "type": "string",
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "USD"
+          ]
+        }
+      },
+      "timestamp": {
+        "description": "The time stamp of the event.",
+        "type": "string",
+        "rule": {
+          "name": "timestamp",
+          "type": "string",
+          "group": "NumberRules",
+          "rule": "int",
+          "minimum": 1714375160,
+          "maximum": 1715375160
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": "3",
+      "delay": "5"
+    }
+  },
+  {
+    "topic": "acmebank/solace/core/payment/loan/paid/v1/{currency}/{amount}/{transactionID}",
+    "eventName": "Loan Paid",
+    "eventVersion": "0.1.1",
+    "messageName": "Loan_Paid",
+    "topicParameters": {
+      "amount": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "amount",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "currency": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "transactionID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "transactionID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "transactionType": {
+        "description": "The transaction type.",
+        "type": "string",
+        "rule": {
+          "name": "transactionType",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "PAYMENT"
+          ]
+        }
+      },
+      "amount": {
+        "description": "The transaction amount.",
+        "type": "number",
+        "rule": {
+          "name": "amount",
+          "type": "number",
+          "group": "NumberRules",
+          "rule": "float",
+          "minimum": 0,
+          "maximum": 1000,
+          "fractionDigits": 2
+        }
+      },
+      "transactionNum": {
+        "description": "The unique identifier of the transaction.",
+        "type": "integer",
+        "rule": {
+          "name": "transactionNum",
+          "type": "integer",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 6,
+          "maxLength": 6,
+          "leadingZeros": true
+        }
+      },
+      "accountNum": {
+        "description": "The unique identifer of an account.",
+        "type": "integer",
+        "rule": {
+          "name": "accountNum",
+          "type": "integer",
+          "group": "FinanceRules",
+          "rule": "accountNumber"
+        }
+      },
+      "currency": {
+        "description": "The currency of the transaction.",
+        "type": "string",
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "USD"
+          ]
+        }
+      },
+      "timestamp": {
+        "description": "The time stamp of the event.",
+        "type": "string",
+        "rule": {
+          "name": "timestamp",
+          "type": "string",
+          "group": "NumberRules",
+          "rule": "int",
+          "minimum": 1714375160,
+          "maximum": 1715375160
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": 1,
+      "delay": 0
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "number"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "transactionNum",
+          "fieldName": "transactionNum",
+          "fieldType": "integer"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "transactionID",
+          "fieldName": "transactionID",
+          "fieldType": "string"
+        }
+      }
+    ]
+  },
+  {
+    "topic": "acmebank/solace/core/transfer/v1/{currency}/{amount}/{transactionID}",
+    "eventName": "Transfer",
+    "eventVersion": "0.1.1",
+    "messageName": "Transfer",
+    "topicParameters": {
+      "amount": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "amount",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "currency": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      },
+      "transactionID": {
+        "schema": {
+          "type": "string"
+        },
+        "rule": {
+          "name": "transactionID",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "alpha",
+          "casing": "mixed",
+          "minLength": 10,
+          "maxLength": 10
+        }
+      }
+    },
+    "payload": {
+      "transactionType": {
+        "description": "The transaction type.",
+        "type": "string",
+        "rule": {
+          "name": "transactionType",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "DEBIT"
+          ]
+        }
+      },
+      "amount": {
+        "description": "The transaction amount.",
+        "type": "number",
+        "rule": {
+          "description": "The transaction amount.",
+          "type": "number",
+          "name": "amount",
+          "group": "NumberRules",
+          "rule": "float",
+          "minimum": 0,
+          "maximum": 1000,
+          "fractionDigits": 2
+        }
+      },
+      "transactionNum": {
+        "description": "The unique identifier of the transaction.",
+        "type": "integer",
+        "rule": {
+          "name": "transactionNum",
+          "type": "integer",
+          "group": "StringRules",
+          "rule": "numeric",
+          "minLength": 6,
+          "maxLength": 6,
+          "leadingZeros": true
+        }
+      },
+      "accountNum": {
+        "description": "The unique identifer of an account.",
+        "type": "integer",
+        "rule": {
+          "name": "accountNum",
+          "type": "integer",
+          "group": "FinanceRules",
+          "rule": "accountNumber"
+        }
+      },
+      "currency": {
+        "description": "The currency of the transaction.",
+        "type": "string",
+        "rule": {
+          "name": "currency",
+          "type": "string",
+          "group": "StringRules",
+          "rule": "enum",
+          "enum": [
+            "USD"
+          ]
+        }
+      },
+      "timestamp": {
+        "description": "The time stamp of the event.",
+        "type": "string",
+        "rule": {
+          "name": "timestamp",
+          "type": "string",
+          "group": "NumberRules",
+          "rule": "int",
+          "minimum": 1714375160,
+          "maximum": 1715375160
+        }
+      }
+    },
+    "publishSettings": {
+      "count": 20,
+      "interval": "5",
+      "delay": "10"
+    },
+    "mappings": [
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "number"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "amount",
+          "fieldName": "amount",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "currency",
+          "fieldName": "currency",
+          "fieldType": "string"
+        }
+      },
+      {
+        "type": "Topic Parameter",
+        "source": {
+          "type": "Payload Parameter",
+          "name": "transactionNum",
+          "fieldName": "transactionNum",
+          "fieldType": "integer"
+        },
+        "target": {
+          "type": "Topic Parameter",
+          "name": "transactionID",
+          "fieldName": "transactionID",
+          "fieldType": "string"
+        }
+      }
+    ]
+  }
+]

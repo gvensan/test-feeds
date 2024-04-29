@@ -1,0 +1,10 @@
+{
+  "name": "ACME - Core Banking",
+  "img": "",
+  "title": "Core Banking",
+  "description": "Application for supporting core banking activities. Added support for paying loans.",
+  "github": "ACME---Core-Banking",
+  "contributor": "gvensan",
+  "domain": "Banking",
+  "tags": "Core Banking, Account Management"
+}

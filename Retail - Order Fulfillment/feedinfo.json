@@ -1,0 +1,10 @@
+{
+  "name": "Retail - Order Fulfillment",
+  "img": "",
+  "title": "Order Fulfilment",
+  "description": "This system involves processing and fulfilling customer orders, including order processing, pick and pack, and shipping.",
+  "github": "Retail---Order-Fulfillment",
+  "contributor": "gvensan",
+  "domain": "Retail",
+  "tags": "Order Fulfillment, Refund Management"
+}
